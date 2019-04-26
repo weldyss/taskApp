@@ -9,6 +9,13 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class LoginPage implements OnInit {
 
   authForm: FormGroup;
+  configs = {
+    isSignIn: true,
+    action: 'login',
+    actionChange: 'Create account'
+  };
+
+  private nameControl = new FormControl('', [Validators.required, Validators.minLength(3)]);
 
   constructor(private fb: FormBuilder) { }
 
@@ -29,6 +36,20 @@ export class LoginPage implements OnInit {
 
   get password(): FormControl {
     return this.authForm.get('email') as FormControl;
+  }
+
+  get name(): FormControl {
+    return this.authForm.get('name') as FormControl;
+  }
+
+  changeAuthAction(): void {
+    this.configs.isSignIn = !this.configs.isSignIn;
+    const {isSignIn} = this.configs;
+    this.configs.action = isSignIn ? 'Login' : 'Sign up';
+    this.configs.actionChange = isSignIn ? 'Create account' : 'I already have an account';
+    !isSignIn 
+      ? this.authForm.addControl('name', this.nameControl) 
+      : this.authForm.removeControl('name')
   }
 
   onSubmit(): void {
