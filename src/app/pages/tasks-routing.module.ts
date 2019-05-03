@@ -9,7 +9,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: './tasks-list/tasks-list.module#TasksListPageModule'
+        loadChildren: './tasks/pages/tasks-list/tasks-list.module#TasksListPageModule'
+      },
+      {
+        path: 'create',
+        loadChildren: './tasks/pages/tasks-save/tasks-save.module#TasksSavePageModule'
       }
     ]
   }
@@ -19,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TasksRoutingModule { }
+export class TasksRoutingModule {}

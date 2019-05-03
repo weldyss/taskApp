@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TasksListPage } from './tasks-list.page';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ComponentsModule } from 'src/app/tasks/components/components.module';
+import { ComponentsModule } from 'src/app/pages/tasks/components/components.module';
 
 const routes: Routes = [
   {

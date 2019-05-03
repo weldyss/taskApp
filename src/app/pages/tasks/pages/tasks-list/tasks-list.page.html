@@ -6,7 +6,7 @@
 
 <ion-content padding>
   <ion-list *ngIf="tasks$ | async as tasks">
-    <ng-container *ngIf="tasks.lenght > 0; else noTasks">
+    <ng-container *ngIf="tasks.length > 0; else noTasks">
       <app-task-item *ngFor="let task of tasks" [task]="task"></app-task-item>
     </ng-container>
     <ng-template #noTasks>
