@@ -8,12 +8,16 @@ const routes: Routes = [
     canActivateChild: [AuthGuard],
     children: [
       {
-        path: '',
-        loadChildren: './tasks/pages/tasks-list/tasks-list.module#TasksListPageModule'
-      },
-      {
         path: 'create',
         loadChildren: './tasks/pages/tasks-save/tasks-save.module#TasksSavePageModule'
+      },
+      {
+        path: 'edit/:id',
+        loadChildren: './tasks/pages/tasks-save/tasks-save.module#TasksSavePageModule'
+      },
+      {
+        path: '',
+        loadChildren: './tasks/pages/tasks-list/tasks-list.module#TasksListPageModule'
       }
     ]
   }
