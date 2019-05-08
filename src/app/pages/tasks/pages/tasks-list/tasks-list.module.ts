@@ -13,11 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    SharedModule,
-    ComponentsModule,
-    RouterModule.forChild(routes)
-  ],
+  imports: [SharedModule, ComponentsModule, RouterModule.forChild(routes)],
   declarations: [TasksListPage]
 })
 export class TasksListPageModule {}

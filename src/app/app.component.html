@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu contentId="menu-content">
+  <ion-menu contentId="menu-content" menuId="main-menu" [disabled]="true">
     <ion-header>
       <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
@@ -7,6 +7,7 @@
     </ion-header>
     <ion-content>
       <ion-list>
+        <ion-list-header *ngIf="user">{{ user.displayName }}</ion-list-header>
         <ion-menu-toggle autoHide="false">
           <ion-item
             button
